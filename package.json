@@ -1,0 +1,11 @@
+{
+  "name": "jocoding-pb-week1",
+  "version": "1.0.0",
+  "description": "Lotto Number Generator",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
