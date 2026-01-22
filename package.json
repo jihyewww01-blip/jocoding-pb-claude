@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Lotto Number Generator",
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "echo 'No build required'",
+    "start": "echo 'Static site - open index.html'"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
