@@ -1,11 +1,43 @@
-const generateBtn = document.getElementById('generate-btn');
-const numbersContainer = document.querySelector('.numbers-container');
-const sortedNumbersContainer = document.querySelector('.sorted-numbers-container');
+const recommendBtn = document.getElementById('recommend-btn');
+const menuContainer = document.querySelector('.menu-container');
 const themeToggle = document.getElementById('theme-toggle');
 
-if (!generateBtn || !numbersContainer || !sortedNumbersContainer || !themeToggle) {
+if (!recommendBtn || !menuContainer || !themeToggle) {
     throw new Error('Required DOM elements not found');
 }
+
+const menus = [
+    { name: '김치찌개', emoji: '🍲' },
+    { name: '삼겹살', emoji: '🥓' },
+    { name: '치킨', emoji: '🍗' },
+    { name: '피자', emoji: '🍕' },
+    { name: '짜장면', emoji: '🍜' },
+    { name: '짬뽕', emoji: '🌶️' },
+    { name: '떡볶이', emoji: '🍢' },
+    { name: '비빔밥', emoji: '🍚' },
+    { name: '불고기', emoji: '🥩' },
+    { name: '갈비찜', emoji: '🍖' },
+    { name: '순두부찌개', emoji: '🥘' },
+    { name: '된장찌개', emoji: '🫕' },
+    { name: '칼국수', emoji: '🍝' },
+    { name: '냉면', emoji: '🥶' },
+    { name: '쌀국수', emoji: '🍜' },
+    { name: '초밥', emoji: '🍣' },
+    { name: '돈까스', emoji: '🥢' },
+    { name: '햄버거', emoji: '🍔' },
+    { name: '파스타', emoji: '🍝' },
+    { name: '샐러드', emoji: '🥗' },
+    { name: '부대찌개', emoji: '🍲' },
+    { name: '감자탕', emoji: '🦴' },
+    { name: '보쌈', emoji: '🥬' },
+    { name: '족발', emoji: '🐷' },
+    { name: '닭갈비', emoji: '🐔' },
+    { name: '곱창', emoji: '🔥' },
+    { name: '삼계탕', emoji: '🐓' },
+    { name: '김밥', emoji: '🍙' },
+    { name: '라면', emoji: '🍜' },
+    { name: '카레', emoji: '🍛' }
+];
 
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
@@ -20,33 +52,20 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
 });
 
-generateBtn.addEventListener('click', () => {
-    numbersContainer.innerHTML = '';
-    sortedNumbersContainer.innerHTML = '';
-    const numbers = new Set();
-    while (numbers.size < 6) {
-        const randomNumber = Math.floor(Math.random() * 45) + 1;
-        numbers.add(randomNumber);
-    }
+recommendBtn.addEventListener('click', () => {
+    menuContainer.innerHTML = '';
 
-    const numberArray = Array.from(numbers);
+    const randomIndex = Math.floor(Math.random() * menus.length);
+    const selectedMenu = menus[randomIndex];
 
-    numberArray.forEach((number, index) => {
-        const numberEl = document.createElement('div');
-        numberEl.classList.add('number');
-        numberEl.textContent = number;
-        numberEl.style.animationDelay = `${index * 100}ms`;
-        numbersContainer.appendChild(numberEl);
-    });
+    const emojiEl = document.createElement('div');
+    emojiEl.classList.add('menu-emoji');
+    emojiEl.textContent = selectedMenu.emoji;
 
-    setTimeout(() => {
-        const sortedNumbers = numberArray.sort((a, b) => a - b);
-        sortedNumbers.forEach((number, index) => {
-            const sortedNumberEl = document.createElement('div');
-            sortedNumberEl.classList.add('sorted-number');
-            sortedNumberEl.textContent = number;
-            sortedNumberEl.style.animationDelay = `${index * 100}ms`;
-            sortedNumbersContainer.appendChild(sortedNumberEl);
-        });
-    }, 700);
+    const menuEl = document.createElement('div');
+    menuEl.classList.add('menu-item');
+    menuEl.textContent = selectedMenu.name;
+
+    menuContainer.appendChild(emojiEl);
+    menuContainer.appendChild(menuEl);
 });

@@ -1,7 +1,7 @@
 {
   "name": "jocoding-pb-week1",
   "version": "1.0.0",
-  "description": "Lotto Number Generator",
+  "description": "Dinner Menu Recommendation",
   "scripts": {
     "build": "echo 'Static site ready'"
   }
