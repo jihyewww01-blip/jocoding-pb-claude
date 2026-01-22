@@ -1,10 +1,24 @@
 const generateBtn = document.getElementById('generate-btn');
 const numbersContainer = document.querySelector('.numbers-container');
 const sortedNumbersContainer = document.querySelector('.sorted-numbers-container');
+const themeToggle = document.getElementById('theme-toggle');
 
-if (!generateBtn || !numbersContainer || !sortedNumbersContainer) {
+if (!generateBtn || !numbersContainer || !sortedNumbersContainer || !themeToggle) {
     throw new Error('Required DOM elements not found');
 }
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+});
 
 generateBtn.addEventListener('click', () => {
     numbersContainer.innerHTML = '';
