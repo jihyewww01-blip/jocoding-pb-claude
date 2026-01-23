@@ -50,6 +50,10 @@ themeToggle.addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+
+    if (typeof reloadDisqus === 'function') {
+        reloadDisqus();
+    }
 });
 
 recommendBtn.addEventListener('click', () => {
