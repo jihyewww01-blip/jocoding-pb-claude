@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Face Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <a href="./index.html" class="lang-switch">🍽️ Menu Picker</a>
+
+    <div class="container animal-test-container">
+        <h1>🐶🐱 Animal Face Test</h1>
+        <p class="subtitle">Are you a puppy or a kitty?</p>
+
+        <div id="image-container">
+            <div id="upload-placeholder">
+                <span>📷</span>
+                <p>Select a photo</p>
+            </div>
+            <img id="preview-image" style="display: none;" />
+        </div>
+
+        <div id="result-container" class="result-container" style="display: none;">
+            <div id="result-emoji" class="result-emoji"></div>
+            <div id="result-text" class="result-text"></div>
+            <div id="result-description" class="result-description"></div>
+        </div>
+
+        <div id="label-container" class="label-container"></div>
+
+        <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+        <button id="upload-btn" onclick="document.getElementById('file-input').click()">Select Photo</button>
+        <button id="analyze-btn" onclick="analyze()" style="display: none;">Analyze</button>
+        <button id="retry-btn" onclick="retry()" style="display: none;">Try Another Photo</button>
+    </div>
+
+    <script>
+        const URL = "https://teachablemachine.withgoogle.com/models/aWHbbmkoJ/";
+        let model, maxPredictions;
+        let imageLoaded = false;
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        async function loadModel() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+        }
+
+        loadModel();
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const preview = document.getElementById('preview-image');
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                document.getElementById('upload-placeholder').style.display = 'none';
+                document.getElementById('upload-btn').style.display = 'none';
+                document.getElementById('analyze-btn').style.display = 'inline-block';
+                document.getElementById('result-container').style.display = 'none';
+                document.getElementById('label-container').innerHTML = '';
+                imageLoaded = true;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function analyze() {
+            if (!model) {
+                alert('Loading model... Please try again in a moment.');
+                return;
+            }
+
+            const image = document.getElementById('preview-image');
+            const prediction = await model.predict(image);
+
+            const labelContainer = document.getElementById('label-container');
+            labelContainer.innerHTML = '';
+
+            let maxProb = 0;
+            let resultClass = '';
+
+            for (let i = 0; i < maxPredictions; i++) {
+                const percent = (prediction[i].probability * 100).toFixed(0);
+                const className = prediction[i].className;
+                const isDogClass = className.toLowerCase().includes('dog') || className === '강아지';
+                const emoji = isDogClass ? '🐶' : '🐱';
+                const displayName = isDogClass ? 'Dog' : 'Cat';
+
+                const div = document.createElement('div');
+                div.className = 'prediction-bar';
+                div.innerHTML = `
+                    <span class="label-name">${emoji} ${displayName}</span>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: ${percent}%"></div>
+                    </div>
+                    <span class="label-percent">${percent}%</span>
+                `;
+                labelContainer.appendChild(div);
+
+                if (prediction[i].probability > maxProb) {
+                    maxProb = prediction[i].probability;
+                    resultClass = className;
+                }
+            }
+
+            const isDog = resultClass.toLowerCase().includes('dog') || resultClass === '강아지';
+            const percent = (maxProb * 100).toFixed(0);
+
+            document.getElementById('result-emoji').textContent = isDog ? '🐶' : '🐱';
+            document.getElementById('result-text').textContent = isDog ? 'Puppy Face!' : 'Kitty Face!';
+            document.getElementById('result-description').innerHTML = isDog
+                ? `<strong>${percent}%</strong> chance of Puppy Face!<br>Friendly and energetic personality`
+                : `<strong>${percent}%</strong> chance of Kitty Face!<br>Elegant and mysterious personality`;
+
+            document.getElementById('result-container').style.display = 'block';
+            document.getElementById('analyze-btn').style.display = 'none';
+            document.getElementById('retry-btn').style.display = 'inline-block';
+        }
+
+        function retry() {
+            document.getElementById('file-input').value = '';
+            document.getElementById('preview-image').style.display = 'none';
+            document.getElementById('upload-placeholder').style.display = 'flex';
+            document.getElementById('result-container').style.display = 'none';
+            document.getElementById('label-container').innerHTML = '';
+            document.getElementById('retry-btn').style.display = 'none';
+            document.getElementById('analyze-btn').style.display = 'none';
+            document.getElementById('upload-btn').style.display = 'inline-block';
+            imageLoaded = false;
+        }
+    </script>
+</body>
+</html>
