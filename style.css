@@ -67,10 +67,12 @@
 body {
     font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 80px 20px 40px;
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
@@ -178,4 +180,85 @@ h1 {
 #recommend-btn:active {
     transform: translateY(1px);
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Contact Form */
+.contact-container {
+    text-align: center;
+    background: var(--container-bg);
+    padding: 40px 50px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px var(--shadow-color);
+    transition: transform var(--transition-speed) ease, background var(--transition-speed) ease;
+    max-width: 500px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+.contact-container:hover {
+    transform: translateY(-5px);
+}
+
+.contact-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.contact-subtitle {
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 1em;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: all var(--transition-speed) ease;
+    font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
+}
+
+.contact-form button:active {
+    transform: translateY(1px);
 }
