@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Korean Pages -->
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/index.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/animal-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/animal-test.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/animal-test.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/about.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/contact.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/privacy.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/terms.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- English Pages -->
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/index.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/en/animal-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/animal-test.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/animal-test.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/about.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/contact.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/privacy.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://jihyewww01-blip.github.io/jocoding-pb-claude/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jihyewww01-blip.github.io/jocoding-pb-claude/en/terms.html"/>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

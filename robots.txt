@@ -1,0 +1,9 @@
+# robots.txt for 오늘 뭐 먹지?
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jihyewww01-blip.github.io/jocoding-pb-claude/sitemap.xml
+
+# Crawl-delay (optional, for politeness)
+Crawl-delay: 1
