@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-3768904182572211">
+    <meta name="description" content="About What's for Dinner - A fun web service offering dinner menu recommendations and animal face tests.">
+    <title>About - What's for Dinner?</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3768904182572211" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PDJNMHL3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4PDJNMHL3E');
+    </script>
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <a href="../about.html" class="lang-switch">🇰🇷 한국어</a>
+
+    <nav class="main-nav">
+        <a href="./index.html">🍽️ Menu</a>
+        <a href="./animal-test.html">🐶 Animal</a>
+        <a href="./about.html" class="active">📖 About</a>
+        <a href="./contact.html">📧 Contact</a>
+    </nav>
+
+    <div class="container content-container">
+        <h1>🍽️ What's for Dinner?</h1>
+        <p class="subtitle">About Us</p>
+
+        <div class="content-section">
+            <h2>Our Mission</h2>
+            <p>We solve the daily dilemma of "What should I have for dinner?" With just one click, get a random menu suggestion from our diverse collection!</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Our Services</h2>
+
+            <h3>🍽️ Dinner Menu Picker</h3>
+            <p>Get random dinner suggestions from over 30 different dishes including international cuisines. End your daily dinner decision fatigue!</p>
+
+            <h3>🐶🐱 Animal Face Test</h3>
+            <p>An AI-powered test that analyzes your photo to determine if you have a puppy or kitty face. Using Google's Teachable Machine for fun and accurate results!</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Technology</h2>
+            <ul class="feature-list">
+                <li>Built with pure HTML, CSS, and JavaScript</li>
+                <li>TensorFlow.js powered AI image analysis</li>
+                <li>Responsive web design</li>
+                <li>Dark/Light mode support</li>
+                <li>Multi-language support (Korean/English)</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Contact</h2>
+            <p>For business inquiries and partnerships, please visit our <a href="./contact.html">Contact page</a>.</p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./terms.html">Terms of Service</a>
+        </div>
+        <p class="copyright">© 2025 What's for Dinner? All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

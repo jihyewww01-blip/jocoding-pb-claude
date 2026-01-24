@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-3768904182572211">
+    <meta name="description" content="Terms of Service - What's for Dinner?">
+    <title>Terms of Service - What's for Dinner?</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3768904182572211" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PDJNMHL3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4PDJNMHL3E');
+    </script>
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <a href="../terms.html" class="lang-switch">🇰🇷 한국어</a>
+
+    <nav class="main-nav">
+        <a href="./index.html">🍽️ Menu</a>
+        <a href="./animal-test.html">🐶 Animal</a>
+        <a href="./about.html">📖 About</a>
+        <a href="./contact.html">📧 Contact</a>
+    </nav>
+
+    <div class="container content-container">
+        <h1>Terms of Service</h1>
+        <p class="subtitle">Please read carefully</p>
+
+        <div class="content-section">
+            <p class="last-updated">Last Updated: January 2025</p>
+
+            <h2>1. Purpose</h2>
+            <p>These Terms of Service govern the conditions and procedures for using the web services provided by "What's for Dinner?" (the "Service").</p>
+
+            <h2>2. Definitions</h2>
+            <ul class="policy-list">
+                <li><strong>"Service"</strong> refers to the dinner menu picker, animal face test, and other web services provided by "What's for Dinner?"</li>
+                <li><strong>"User"</strong> refers to all visitors who use the Service in accordance with these Terms.</li>
+            </ul>
+
+            <h2>3. Terms Effectiveness</h2>
+            <ul class="policy-list">
+                <li>These Terms become effective when posted on the Service or otherwise notified to users.</li>
+                <li>The Service may modify these Terms as necessary within the bounds of applicable laws.</li>
+                <li>Modified Terms become effective upon posting. Continued use of the Service constitutes acceptance of the modified Terms.</li>
+            </ul>
+
+            <h2>4. Services Provided</h2>
+            <p>The Service provides the following features:</p>
+            <ul class="policy-list">
+                <li>Random dinner menu recommendations</li>
+                <li>AI-based animal face test</li>
+                <li>Other features as determined by the Service</li>
+            </ul>
+
+            <h2>5. Service Usage</h2>
+            <ul class="policy-list">
+                <li>The Service is available free of charge without registration.</li>
+                <li>The Service operates 24/7 in principle, but may be temporarily suspended for system maintenance.</li>
+            </ul>
+
+            <h2>6. User Obligations</h2>
+            <p>Users must not engage in the following activities:</p>
+            <ul class="policy-list">
+                <li>Interfering with the normal operation of the Service</li>
+                <li>Using the Service for illegal activities</li>
+                <li>Damaging others' reputation or causing harm</li>
+                <li>Unauthorized collection, storage, posting, or distribution of Service information</li>
+                <li>Reverse engineering or extracting source code from the Service</li>
+            </ul>
+
+            <h2>7. Intellectual Property</h2>
+            <ul class="policy-list">
+                <li>All content and intellectual property rights of the Service belong to the Service.</li>
+                <li>Users may not reproduce, transmit, publish, distribute, or broadcast information obtained from the Service without prior consent.</li>
+            </ul>
+
+            <h2>8. Disclaimer</h2>
+            <ul class="policy-list">
+                <li>The Service is provided free of charge, and we are not liable for damages related to Service use.</li>
+                <li>Menu recommendations are for reference only and do not consider individual health conditions or allergies.</li>
+                <li>Animal face test results are for entertainment purposes only and accuracy is not guaranteed.</li>
+                <li>We are not liable for service interruptions due to force majeure such as natural disasters or system failures.</li>
+            </ul>
+
+            <h2>9. Advertising</h2>
+            <p>The Service may display advertisements for operational purposes. For advertising-related information, please refer to our <a href="./privacy.html">Privacy Policy</a>.</p>
+
+            <h2>10. Governing Law</h2>
+            <ul class="policy-list">
+                <li>These Terms shall be governed by and interpreted in accordance with the laws of the Republic of Korea.</li>
+                <li>Disputes arising from Service use shall be resolved through mutual agreement. If agreement cannot be reached, disputes may be submitted to the competent court.</li>
+            </ul>
+
+            <h2>Supplementary Provisions</h2>
+            <p>These Terms are effective as of January 1, 2025.</p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./terms.html">Terms of Service</a>
+        </div>
+        <p class="copyright">© 2025 What's for Dinner? All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

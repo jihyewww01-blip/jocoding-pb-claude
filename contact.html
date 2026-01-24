@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-3768904182572211">
+    <meta name="description" content="문의하기 - 오늘 뭐 먹지? 비즈니스 제휴 및 문의사항을 남겨주세요.">
+    <title>문의하기 - 오늘 뭐 먹지?</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3768904182572211" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PDJNMHL3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4PDJNMHL3E');
+    </script>
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <a href="./en/contact.html" class="lang-switch">🇺🇸 English</a>
+
+    <nav class="main-nav">
+        <a href="./index.html">🍽️ 메뉴추천</a>
+        <a href="./animal-test.html">🐶 동물상</a>
+        <a href="./about.html">📖 소개</a>
+        <a href="./contact.html" class="active">📧 문의</a>
+    </nav>
+
+    <div class="container content-container">
+        <h1>📧 문의하기</h1>
+        <p class="subtitle">Contact Us</p>
+
+        <div class="content-section">
+            <h2>비즈니스 제휴 문의</h2>
+            <p>광고, 협업, 제휴 등 비즈니스 관련 문의를 환영합니다. 아래 양식을 통해 문의해 주시면 빠른 시일 내에 답변드리겠습니다.</p>
+        </div>
+
+        <form action="https://formspree.io/f/xeeaevag" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">이름 / 회사명 *</label>
+                <input type="text" id="name" name="name" placeholder="홍길동 / ABC 주식회사" required>
+            </div>
+            <div class="form-group">
+                <label for="email">이메일 주소 *</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">문의 유형</label>
+                <select id="subject" name="subject">
+                    <option value="partnership">비즈니스 제휴</option>
+                    <option value="advertising">광고 문의</option>
+                    <option value="feedback">서비스 피드백</option>
+                    <option value="bug">버그 신고</option>
+                    <option value="other">기타</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">문의 내용 *</label>
+                <textarea id="message" name="message" placeholder="문의하실 내용을 자세히 작성해 주세요." rows="6" required></textarea>
+            </div>
+            <button type="submit">문의 보내기</button>
+        </form>
+
+        <div class="content-section" style="margin-top: 40px;">
+            <h2>문의 안내</h2>
+            <ul class="feature-list">
+                <li>문의에 대한 답변은 영업일 기준 1-3일 내에 이메일로 발송됩니다.</li>
+                <li>스팸 방지를 위해 동일한 내용의 반복 문의는 답변이 제한될 수 있습니다.</li>
+                <li>개인정보는 <a href="./privacy.html">개인정보처리방침</a>에 따라 안전하게 관리됩니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="./index.html">홈</a>
+            <a href="./about.html">소개</a>
+            <a href="./contact.html">문의하기</a>
+            <a href="./privacy.html">개인정보처리방침</a>
+            <a href="./terms.html">이용약관</a>
+        </div>
+        <p class="copyright">© 2025 오늘 뭐 먹지? All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

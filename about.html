@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-3768904182572211">
+    <meta name="description" content="저녁 메뉴 추천과 동물상 테스트를 제공하는 재미있는 웹서비스입니다.">
+    <title>소개 - 오늘 뭐 먹지?</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3768904182572211" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PDJNMHL3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4PDJNMHL3E');
+    </script>
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <a href="./en/about.html" class="lang-switch">🇺🇸 English</a>
+
+    <nav class="main-nav">
+        <a href="./index.html">🍽️ 메뉴추천</a>
+        <a href="./animal-test.html">🐶 동물상</a>
+        <a href="./about.html" class="active">📖 소개</a>
+        <a href="./contact.html">📧 문의</a>
+    </nav>
+
+    <div class="container content-container">
+        <h1>🍽️ 오늘 뭐 먹지?</h1>
+        <p class="subtitle">서비스 소개</p>
+
+        <div class="content-section">
+            <h2>우리의 미션</h2>
+            <p>"오늘 저녁 뭐 먹지?" 매일 반복되는 이 고민을 해결해드립니다. 버튼 하나로 다양한 메뉴 중 오늘의 저녁을 추천받으세요!</p>
+        </div>
+
+        <div class="content-section">
+            <h2>제공 서비스</h2>
+
+            <h3>🍽️ 저녁 메뉴 추천</h3>
+            <p>한식, 중식, 양식, 일식 등 30가지 이상의 다양한 메뉴 중에서 랜덤으로 오늘의 저녁 메뉴를 추천해드립니다. 매일 저녁 메뉴 선택의 고민을 덜어드립니다.</p>
+
+            <h3>🐶🐱 동물상 테스트</h3>
+            <p>AI 기술을 활용한 동물상 테스트입니다. 사진을 업로드하면 강아지상인지 고양이상인지 분석해드립니다. Google의 Teachable Machine을 활용한 이미지 인식 기술로 재미있는 결과를 확인해보세요.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>기술 스택</h2>
+            <ul class="feature-list">
+                <li>순수 HTML, CSS, JavaScript로 제작</li>
+                <li>TensorFlow.js 기반 AI 이미지 분석</li>
+                <li>반응형 웹 디자인</li>
+                <li>다크모드/라이트모드 지원</li>
+                <li>한국어/영어 다국어 지원</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>연락처</h2>
+            <p>비즈니스 제휴, 문의사항이 있으시면 <a href="./contact.html">문의하기 페이지</a>를 통해 연락해주세요.</p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="./index.html">홈</a>
+            <a href="./about.html">소개</a>
+            <a href="./contact.html">문의하기</a>
+            <a href="./privacy.html">개인정보처리방침</a>
+            <a href="./terms.html">이용약관</a>
+        </div>
+        <p class="copyright">© 2025 오늘 뭐 먹지? All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>
